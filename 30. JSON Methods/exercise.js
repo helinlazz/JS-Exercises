@@ -1,0 +1,20 @@
+class Person {
+  constructor(id, firstName, lastName, age) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+  fromJson() {
+    return JSON.parse(this);
+  }
+  static fromJson(json) {
+    const that = JSON.parse(json);
+    return new Person(that.id, that.firstName, that.lastName, that.age);
+  }
+}
+
+const json = '{"id":1,"firstName":"Mario","lastName":"Rossi","age":25}';
+
+const developer = Person.fromJson(json);
+console.log(developer);
