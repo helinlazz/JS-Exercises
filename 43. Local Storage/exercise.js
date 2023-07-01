@@ -4,9 +4,9 @@ const user = {
   age: 25,
 };
 
-function saveToLocalStorage(user) {
+function store(user) {
   const userJson = JSON.stringify(user);
   localStorage.setItem("user", userJson);
 }
 
-saveToLocalStorage(user);
+store(user);
